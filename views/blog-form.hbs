@@ -1,0 +1,30 @@
+{{message}}
+<form action="/blog{{editRoute}}" method="POST">
+  <label>Title:</label>
+  <input type="text" name="title" value="{{title}}">
+  <br>
+  <br>
+  <label>Content:</label>
+  <textarea name="content" cols="30" rows="10">{{content}}</textarea>
+  <br>
+  <br>
+  <input type="submit">
+</form>
+
+{{#if id}}
+<a href="/blog/{{id}}">View blog post</a>
+<br>
+{{!-- <form action="/blog/{{id}}/delete" method="POST">
+  <input type="submit" value="Delete Post">
+</form> --}}
+
+<button
+  data-delete-button
+  data-delete-url="/blog/{{id}}"
+>Delete Post Using Ajax</button>
+
+{{/if}}
+
+
+<script src="/scripts/main.js"></script>
+
